@@ -18,13 +18,13 @@ public class EmployeeController {
     }
 
     @GetMapping("/show")
-    public Employee show(@RequestParam Long id){
-       return employeeRepository.findById(id).get();
+    public Employee show(@RequestParam int id){
+       return employeeRepository.findById((long) id).get();
     }
 
     @DeleteMapping("/delete")
-    public void delete(@RequestParam Long id){
-         employeeRepository.deleteById(id);
+    public void delete(@RequestParam int id){
+         employeeRepository.deleteById((long)id);
     }
 
     @PutMapping("/edit")
